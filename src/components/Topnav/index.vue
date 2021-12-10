@@ -4,14 +4,6 @@
         <ul class="menu">
             <li>菜单</li>
             <li>菜单</li>
-            <li>菜单</li>
-            <li>菜单</li>
-            <li>菜单</li>
-            <li>菜单</li>
-            <li>菜单</li>
-            <li>菜单</li>
-            <li>菜单</li>
-            <li>菜单</li>
         </ul>
     </div>
 </template>
@@ -51,6 +43,15 @@
 
             > li {
                 margin: 0 1px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            > .menu {
+                display: none;
+            }
+            > .logo {
+                margin: 0 auto;
             }
         }
     }
