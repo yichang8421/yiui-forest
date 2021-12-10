@@ -1,6 +1,6 @@
 <template>
     <div class="topnav">
-        <span class="toggleAside"></span>
+        <span class="toggleAside" @click="toggleAside"></span>
         <div class="logo" @click="toggleAside">LOGO</div>
         <ul class="menu">
             <li>菜单</li>
@@ -49,13 +49,6 @@
 
         > .toggleAside {
             display: none;
-            width: 24px;
-            height: 24px;
-            background: #94deca;
-            position: absolute;
-            left: 16px;
-            top: 50%;
-            transform: translateY(-50%);
         }
 
         @media (max-width: 500px) {
@@ -67,6 +60,13 @@
             }
             > .toggleAside {
                 display: inline-block;
+                width: 24px;
+                height: 24px;
+                background: #94deca;
+                position: absolute;
+                left: 16px;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
     }
