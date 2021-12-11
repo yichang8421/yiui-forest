@@ -22,6 +22,7 @@
     $h: 22px;
     $h2: $h - 4px;
     button {
+        z-index: 1;
         height: $h;
         width: $h*2;
         border: none;

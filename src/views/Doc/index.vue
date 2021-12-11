@@ -64,6 +64,7 @@
 
             > aside {
                 flex-shrink: 0;
+                z-index: 2;
 
                 background: yellowgreen;
                 width: 150px;
