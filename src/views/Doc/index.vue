@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <Topnav/>
+    <div class="layout">
+        <Topnav class="nav"/>
         <div class="content">
             <aside v-if="asideVisible">
                 <h2>组件列表</h2>
@@ -20,7 +20,6 @@
                 </ol>
             </aside>
             <main>
-                fuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuckfuck
                 <router-view/>
             </main>
         </div>
@@ -41,27 +40,58 @@
 </script>
 
 <style lang="scss" scoped>
-    aside {
-        background: yellowgreen;
-        width: 150px;
+    .layout {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
         height: 100vh;
-        padding: 16px;
+        overflow-x: hidden;
 
-        > h2 {
-            margin-bottom: 4px;
+        > .nav {
+            flex-shrink: 0;
         }
 
-        > ol {
-            > li {
-                padding: 4px;
+        > .content {
+            /*background: gold;*/
+            display: flex;
+            flex: 1;
+            padding-top: 52px;
+            padding-left: 150px;
+            width: 100vw;
+            @media (max-width: 500px) {
+                padding-left: 0;
             }
-        }
 
-        @media (max-width: 500px) {
-            top: 0;
-            left: 0;
-            position: fixed;
-            padding-top: 70px;
+            > aside {
+                flex-shrink: 0;
+
+                background: yellowgreen;
+                width: 150px;
+                height: 100vh;
+                padding: 16px;
+
+                position: fixed;
+                top: 0;
+                left: 0;
+                padding-top: 70px;
+
+                > h2 {
+                    margin-bottom: 4px;
+                }
+
+                > ol {
+                    > li {
+                        padding: 4px;
+                    }
+                }
+            }
+
+            > main {
+                flex: 1;
+                padding: 16px;
+                background: lightgreen;
+                overflow: auto;
+            }
         }
     }
 </style>

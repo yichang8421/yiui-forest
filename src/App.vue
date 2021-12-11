@@ -14,9 +14,11 @@
             const asideVisible = ref(width > 500);
             provide("asideVisible", asideVisible);
 
-            // 切换路由之后，关闭 aside 标签
+            // 移动端切换路由之后，关闭 aside 标签
             router.afterEach(() => {
-                asideVisible.value = false;
+                if (width <= 500) {
+                    asideVisible.value = false;
+                }
             });
         }
     };

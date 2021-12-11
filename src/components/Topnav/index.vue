@@ -29,8 +29,11 @@
         background: pink;
         display: flex;
         padding: 16px;
-        position: relative;
+        position: fixed;
+        width: 100vw;
         z-index: 10;
+        top: 0;
+        left: 0;
 
         > .logo {
             max-width: 6em;
@@ -71,7 +74,8 @@
                 left: 16px;
                 top: 50%;
                 transform: translateY(-50%);
-                &:hover{
+
+                &:hover {
                     cursor: pointer;
                 }
             }
