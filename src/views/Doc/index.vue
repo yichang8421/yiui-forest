@@ -68,7 +68,7 @@
                 background: yellowgreen;
                 width: 150px;
                 height: 100vh;
-                padding: 16px;
+                padding: 16px 0;
 
                 position: fixed;
                 top: 0;
@@ -77,11 +77,24 @@
 
                 > h2 {
                     margin-bottom: 4px;
+                    padding: 4px 16px;
+                    font-weight: bold;
                 }
 
                 > ol {
                     > li {
-                        padding: 4px;
+                        >a{
+                            display: block;
+                            padding: 4px 24px;
+                            border: none;
+                            &:hover{
+                                color: cornflowerblue;
+                            }
+                        }
+                        > .router-link-active {
+                            background: white;
+                            color: cornflowerblue;
+                        }
                     }
                 }
             }
@@ -89,7 +102,7 @@
             > main {
                 flex: 1;
                 padding: 16px;
-                background: lightgreen;
+                background: white;
                 overflow: auto;
             }
         }
