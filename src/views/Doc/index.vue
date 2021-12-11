@@ -73,7 +73,7 @@
                 position: fixed;
                 top: 0;
                 left: 0;
-                padding-top: 70px;
+                padding-top: 100px;
 
                 > h2 {
                     margin-bottom: 4px;
@@ -88,12 +88,12 @@
                             padding: 4px 24px;
                             border: none;
                             &:hover{
-                                color: cornflowerblue;
+                                color: #41b883;
                             }
                         }
                         > .router-link-active {
                             background: white;
-                            color: cornflowerblue;
+                            color: #41b883;
                         }
                     }
                 }
