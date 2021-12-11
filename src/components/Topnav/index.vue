@@ -1,7 +1,7 @@
 <template>
     <div class="topnav">
         <span class="toggleAside" @click="toggleAside"></span>
-        <div class="logo" @click="toggleAside">LOGO</div>
+        <router-link to="/" class="logo">LOGO</router-link>
         <ul class="menu">
             <li>菜单</li>
             <li>菜单</li>
@@ -35,6 +35,10 @@
         > .logo {
             max-width: 6em;
             margin-right: auto;
+
+            &:hover {
+                border: none;
+            }
         }
 
         > .menu {
@@ -67,6 +71,9 @@
                 left: 16px;
                 top: 50%;
                 transform: translateY(-50%);
+                &:hover{
+                    cursor: pointer;
+                }
             }
         }
     }

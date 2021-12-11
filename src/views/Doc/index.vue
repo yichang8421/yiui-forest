@@ -43,10 +43,6 @@
         width: 150px;
         height: 100vh;
         padding: 16px;
-        top: 0;
-        left: 0;
-        position: fixed;
-        padding-top: 70px;
 
         > h2 {
             margin-bottom: 4px;
@@ -56,6 +52,13 @@
             > li {
                 padding: 4px;
             }
+        }
+
+        @media (max-width: 500px) {
+            top: 0;
+            left: 0;
+            position: fixed;
+            padding-top: 70px;
         }
     }
 </style>
