@@ -40,11 +40,23 @@
             transition: all 250ms; // 动画柔和过渡
         }
 
+        &:active {
+            > span {
+                width: $h2 + 4px; // 点击button时，让span变宽一点，看起来有弹性效果。
+            }
+        }
+
         &.checked {
             background: blue;
 
             > span {
                 left: calc(100% - #{$h2} - 2px);
+            }
+
+            &:active {
+                > span {
+                    margin-left: -4px; //当span在右边时（chacked为true时），让其向左边移动一点，避免超出范围
+                }
             }
         }
     }
