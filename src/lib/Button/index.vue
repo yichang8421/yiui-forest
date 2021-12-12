@@ -1,5 +1,5 @@
 <template>
-    <button class="yiui-button" :class="classes">
+    <button class="yiui-button" :class="classes" :disabled="disabled">
         <slot/>
     </button>
 </template>
@@ -21,6 +21,10 @@
                 type: String,
                 default: "normal"
             },
+            disabled: {
+                type: Boolean,
+                default: false
+            }
         },
         setup(props) {
             const {theme, size, level} = props;
@@ -42,6 +46,7 @@
     $color: #333;
     $blue: #40a9ff;
     $red: #ff2600;
+    $gray: gray;
     $radius: 4px;
     .yiui-button {
         height: $h;
@@ -165,6 +170,15 @@
                 &:hover, &:focus {
                     color: darken($red, 10%);
                 }
+            }
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+            color: $gray;
+
+            &.yiui-theme-button {
+                border-color: $gray;
             }
         }
     }
