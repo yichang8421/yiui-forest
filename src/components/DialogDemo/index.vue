@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="position: relative;z-index: 1">
         <div>Dialog示例</div>
         <h1>示例</h1>
         <Button @click="toggle">toggle</Button>
@@ -8,11 +8,12 @@
                 <strong>自定义标题</strong>
             </template>
             <template v-slot:content>
-                <strong>自定义提示</strong>
-                <div>自定义对话框</div>
+                <strong>自定义提示文本</strong>
+                <div>自定义询问</div>
             </template>
         </Dialog>
     </div>
+    <div style="position: relative; z-index: 2; width: 300px; height: 300px; background: red;"></div>
 </template>
 
 <script lang="ts">

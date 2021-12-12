@@ -1,21 +1,23 @@
 <template>
     <template v-if="visable">
-        <div class="yiui-dialog-overlay" @click="onClickOverlay"></div>
-        <div class="yiui-dialog-wrapper">
-            <div class="yiui-dialog">
-                <header>
-                    <slot name="title"/>
-                    <span class="yiui-dialog-close" @click="close"></span>
-                </header>
-                <main>
-                    <slot name="content"/>
-                </main>
-                <footer>
-                    <Button @click="ok">确定</Button>
-                    <Button @click="cancel">取消</Button>
-                </footer>
+        <Teleport to="body">
+            <div class="yiui-dialog-overlay" @click="onClickOverlay"></div>
+            <div class="yiui-dialog-wrapper">
+                <div class="yiui-dialog">
+                    <header>
+                        <slot name="title"/>
+                        <span class="yiui-dialog-close" @click="close"></span>
+                    </header>
+                    <main>
+                        <slot name="content"/>
+                    </main>
+                    <footer>
+                        <Button @click="ok">确定</Button>
+                        <Button @click="cancel">取消</Button>
+                    </footer>
+                </div>
             </div>
-        </div>
+        </Teleport>
     </template>
 </template>
 
