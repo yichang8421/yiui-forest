@@ -1,5 +1,5 @@
 <template>
-    <template v-if="visable">
+    <template v-if="visible">
         <Teleport to="body">
             <div class="yiui-dialog-overlay" @click="onClickOverlay"></div>
             <div class="yiui-dialog-wrapper">
@@ -26,7 +26,7 @@
 
     export default {
         props: {
-            visable: {
+            visible: {
                 type: Boolean,
                 default: false
             },
@@ -43,7 +43,7 @@
         },
         setup(props, context) {
             const close = () => {
-                context.emit("update:visable", false);
+                context.emit("update:visible", false);
             };
             const ok = () => {
                 if (props.onOK?.() !== false) {
@@ -52,8 +52,10 @@
                 }
             };
             const cancel = () => {
-                context.emit("cancel");
-                close();
+                if(props.onCancel?.()!==false){
+                    context.emit("cancel");
+                    close();
+                }
             };
             const onClickOverlay = () => {
                 if (props.closeOnClickOverlay) {
