@@ -1,16 +1,32 @@
 <template>
-    <button class="yiui-button" :class="`yiui-theme-${theme}`">
+    <button class="yiui-button" :class="classes">
         <slot/>
     </button>
 </template>
 
 <script>
+    import {computed} from "vue";
+
     export default {
         props: {
             theme: {
                 type: String,
                 default: "button"
+            },
+            size: {
+                type: String,
+                default: "normal"
             }
+        },
+        setup(props) {
+            const {theme, size} = props;
+            const classes = computed(() => {
+                return {
+                    [`yiui-theme-${theme}`]: theme,
+                    [`yiui-size-${size}`]: size
+                };
+            });
+            return {classes};
         }
     };
 </script>
