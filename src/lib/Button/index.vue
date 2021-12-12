@@ -16,14 +16,19 @@
             size: {
                 type: String,
                 default: "normal"
-            }
+            },
+            level: {
+                type: String,
+                default: "normal"
+            },
         },
         setup(props) {
-            const {theme, size} = props;
+            const {theme, size, level} = props;
             const classes = computed(() => {
                 return {
                     [`yiui-theme-${theme}`]: theme,
-                    [`yiui-size-${size}`]: size
+                    [`yiui-size-${size}`]: size,
+                    [`yiui-level-${level}`]: level,
                 };
             });
             return {classes};
@@ -36,6 +41,7 @@
     $border-color: #d9d9d9;
     $color: #333;
     $blue: #40a9ff;
+    $red: #ff2600;
     $radius: 4px;
     .yiui-button {
         height: $h;
@@ -52,6 +58,7 @@
         /* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影颜色 */
         white-space: nowrap;
         box-sizing: border-box;
+        transition: all 500ms;
 
         & + & { // 只有相邻两个元素才有8px左侧外边距
             // +号为兄弟选择器。a + b 选择紧邻在 a 元素后面的 b 元素
@@ -103,6 +110,62 @@
             font-size: 24px;
             height: 48px;
             padding: 0 16px;
+        }
+
+        &.yiui-theme-button {
+            &.yiui-level-importent {
+                background: $blue;
+                color: white;
+                border-color: $blue;
+
+                &:hover, &:focus {
+                    background: darken($blue, 10%);
+                    border-color: darken($blue, 10%);
+                }
+            }
+
+            &.yiui-level-danger {
+                background: $red;
+                color: white;
+                border-color: $red;
+
+                &:hover, &:focus {
+                    background: darken($red, 10%);
+                    border-color: darken($red, 10%);
+                }
+            }
+        }
+
+        &.yiui-theme-link {
+            &.yiui-level-importent {
+                font-weight: bolder;
+            }
+
+            &.yiui-level-danger {
+                color: $red;
+
+                &:hover, &:focus {
+                    color: darken($red, 10%);
+                }
+            }
+        }
+
+        &.yiui-theme-text {
+            &.yiui-level-importent {
+                color: $blue;
+
+                &:hover, &:focus {
+                    color: darken($blue, 10%);
+                }
+            }
+
+            &.yiui-level-danger {
+                color: $red;
+
+                &:hover, &:focus {
+                    color: darken($red, 10%);
+                }
+            }
         }
     }
 </style>
