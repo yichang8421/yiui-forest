@@ -1,27 +1,41 @@
 <template>
-    <div class="yiui-dialog-overlay"></div>
-    <div class="yiui-dialog-wrapper">
-        <div class="yiui-dialog">
-            <header>
-                <span>标题</span>
-                <span class="yiui-dialog-close"></span>
-            </header>
-            <main>
-                <p>提示</p>
-                <p>这是一个对话框</p>
-            </main>
-            <footer>
-                <Button>确定</Button>
-                <Button>取消</Button>
-            </footer>
+    <template v-if="visable">
+        <div class="yiui-dialog-overlay"></div>
+        <div class="yiui-dialog-wrapper">
+            <div class="yiui-dialog">
+                <header>
+                    <span>标题</span>
+                    <span class="yiui-dialog-close" @click="close"></span>
+                </header>
+                <main>
+                    <p>提示</p>
+                    <p>这是一个对话框</p>
+                </main>
+                <footer>
+                    <Button>确定</Button>
+                    <Button>取消</Button>
+                </footer>
+            </div>
         </div>
-    </div>
+    </template>
 </template>
 
 <script lang="ts">
     import Button from "../../lib/Button/index.vue";
 
     export default {
+        props: {
+            visable: {
+                type: Boolean,
+                default: false
+            },
+        },
+        setup(props, context) {
+            const close = () => {
+                context.emit("update:visable", false);
+            };
+            return {close};
+        },
         components: {Button}
     };
 </script>
@@ -95,6 +109,7 @@
             &::before {
                 transform: translate(-50%, -50%) rotate(-45deg);
             }
+
             &::after {
                 transform: translate(-50%, -50%) rotate(45deg);
             }
