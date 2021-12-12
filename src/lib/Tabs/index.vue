@@ -1,6 +1,8 @@
 <template>
     <div>
-        <slot/>
+        Tabs 组件
+        <component v-for="c in defaults" :is="c"></component>
+        <!-- <slot/> -->
     </div>
 </template>
 
