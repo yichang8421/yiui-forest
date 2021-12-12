@@ -15,16 +15,18 @@ export const openDialog = (options: Options) => {
     document.body.appendChild(div);
 
     const close = () => {
-        app.unmount(div);
+        dialogApp.unmount(div);
         div.remove();
     };
 
-    const app = createApp({
+    const dialogApp = createApp({
         render() {
             return h(
                 Dialog,
+                // 属性和事件
                 {
                     visible: true,
+                    // 监听 update:visible 事件，当其被触发时，若收到 visible 参数为 false，则直接销毁 Dialog 组件(dialogApp)和创建的 div 元素。
                     "onUpdate:visible": (newVisible: Boolean) => {
                         if (!newVisible) {
                             close();
@@ -32,6 +34,7 @@ export const openDialog = (options: Options) => {
                     },
                     onOk, onCancel
                 },
+                // slot 参数
                 {
                     title,
                     content,
@@ -40,5 +43,5 @@ export const openDialog = (options: Options) => {
         },
     });
 
-    app.mount(div);
+    dialogApp.mount(div);
 };
