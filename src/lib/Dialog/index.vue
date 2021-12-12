@@ -4,11 +4,11 @@
         <div class="yiui-dialog-wrapper">
             <div class="yiui-dialog">
                 <header>
-                    <span>{{title}}</span>
+                    <slot name="title"/>
                     <span class="yiui-dialog-close" @click="close"></span>
                 </header>
                 <main>
-                    <slot/>
+                    <slot name="content"/>
                 </main>
                 <footer>
                     <Button @click="ok">确定</Button>
@@ -38,10 +38,6 @@
                 type: Boolean,
                 default: true
             },
-            title: {
-                type: String,
-                default: ""
-            }
         },
         setup(props, context) {
             const close = () => {
