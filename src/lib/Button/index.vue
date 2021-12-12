@@ -92,5 +92,17 @@
                 background: darken(white, 5%);
             }
         }
+
+        &.yiui-size-small {
+            font-size: 12px;
+            height: 20px;
+            padding: 0 4px;
+        }
+
+        &.yiui-size-big {
+            font-size: 24px;
+            height: 48px;
+            padding: 0 16px;
+        }
     }
 </style>
