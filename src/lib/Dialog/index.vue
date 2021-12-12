@@ -1,6 +1,6 @@
 <template>
     <template v-if="visable">
-        <div class="yiui-dialog-overlay"></div>
+        <div class="yiui-dialog-overlay" @click="onClickOverlay"></div>
         <div class="yiui-dialog-wrapper">
             <div class="yiui-dialog">
                 <header>
@@ -12,8 +12,8 @@
                     <p>这是一个对话框</p>
                 </main>
                 <footer>
-                    <Button>确定</Button>
-                    <Button>取消</Button>
+                    <Button @click="ok">确定</Button>
+                    <Button @click="cancel">取消</Button>
                 </footer>
             </div>
         </div>
@@ -29,12 +29,37 @@
                 type: Boolean,
                 default: false
             },
+            onOK: {
+                type: Function
+            },
+            onCancel: {
+                type: Function
+            },
+            closeOnClickOverlay: {
+                type: Boolean,
+                default: true
+            }
         },
         setup(props, context) {
             const close = () => {
                 context.emit("update:visable", false);
             };
-            return {close};
+            const ok = () => {
+                if (props.onOK?.() !== false) {
+                    console.log("OK 执行完毕");
+                    close();
+                }
+            };
+            const cancel = () => {
+                context.emit("cancel");
+                close();
+            };
+            const onClickOverlay = () => {
+                if (props.closeOnClickOverlay) {
+                    close();
+                }
+            };
+            return {close, ok, cancel, onClickOverlay};
         },
         components: {Button}
     };

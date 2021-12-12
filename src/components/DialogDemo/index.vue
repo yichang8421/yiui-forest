@@ -3,7 +3,7 @@
         <div>Dialog示例</div>
         <Button @click="toggle">toggle</Button>
         <h1>示例</h1>
-        <Dialog :visable="dialogVisible" @update:visable="dialogVisible=$event"/>
+        <Dialog v-model:visable="dialogVisible" :onOK="onOK" :onCancel="onCancel" :closeOnClickOverlay="true"/>
     </div>
 </template>
 
@@ -19,7 +19,15 @@
             const toggle = () => {
                 dialogVisible.value = !dialogVisible.value;
             };
-            return {dialogVisible, toggle};
+            const onOK = () => {
+                console.log("Do something");
+                return true;    // 可以通过 return false; 阻止对话框关闭
+            };
+            const onCancel = () => {
+                console.log("bye");
+                return;
+            };
+            return {dialogVisible, toggle, onOK, onCancel};
         }
     };
 </script>
