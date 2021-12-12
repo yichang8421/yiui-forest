@@ -64,7 +64,7 @@
         background: white;
         border: 1px solid $border-color;
         color: $color;
-        box-shadow: 0 1px 0 fade-out(black, 0.95);
+        box-shadow: 0 1px 0 fade_out(black, 0.95);
         /* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影颜色 */
         white-space: nowrap;
         box-sizing: border-box;
