@@ -4,12 +4,11 @@
         <div class="yiui-dialog-wrapper">
             <div class="yiui-dialog">
                 <header>
-                    <span>标题</span>
+                    <span>{{title}}</span>
                     <span class="yiui-dialog-close" @click="close"></span>
                 </header>
                 <main>
-                    <p>提示</p>
-                    <p>这是一个对话框</p>
+                    <slot/>
                 </main>
                 <footer>
                     <Button @click="ok">确定</Button>
@@ -38,6 +37,10 @@
             closeOnClickOverlay: {
                 type: Boolean,
                 default: true
+            },
+            title: {
+                type: String,
+                default: ""
             }
         },
         setup(props, context) {

@@ -1,9 +1,12 @@
 <template>
     <div>
         <div>Dialog示例</div>
-        <Button @click="toggle">toggle</Button>
         <h1>示例</h1>
-        <Dialog v-model:visable="dialogVisible" :onOK="onOK" :onCancel="onCancel" :closeOnClickOverlay="true"/>
+        <Button @click="toggle">toggle</Button>
+        <Dialog v-model:visable="dialogVisible" :onOK="onOK" :onCancel="onCancel" :closeOnClickOverlay="true" title="自定义标题">
+            <div>自定义提示</div>
+            <div>自定义对话框</div>
+        </Dialog>
     </div>
 </template>
 
