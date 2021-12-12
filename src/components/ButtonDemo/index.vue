@@ -2,7 +2,7 @@
     <div>示例</div>
     <h1>类型示例</h1>
     <div>
-        <Button>button</Button>
+        <Button @click="onClick">button</Button>
         <Button theme="link">link</Button>
         <Button theme="text">text</Button>
     </div>
@@ -47,6 +47,7 @@
     <h1>加载中示例</h1>
     <div>
         <Button loading>加载中</Button>
+        <Button>加载完毕</Button>
     </div>
 </template>
 
@@ -57,7 +58,7 @@
         components: {Button},
         setup() {
             const onClick = () => {
-                console.log("hello");
+                console.log("Do something...");
             };
 
             return {onClick};
