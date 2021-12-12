@@ -1,6 +1,6 @@
 <template>
     <Button>HELLO</Button>
-    <Button @click="onClick" @focus="onClick" @mouseover="onClick">HELLO</Button>
+    <Button @click="onClick" @focus="onClick" @mouseover="onClick" size="small">HELLO</Button>
     <Button theme="button">HELLO</Button>
     <Button theme="link">HELLO</Button>
     <Button theme="text">HELLO</Button>

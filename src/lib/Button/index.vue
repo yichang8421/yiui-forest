@@ -1,7 +1,6 @@
 <template>
-    <div>
-<!--        通过实例 property $attrs 可以让这些 attribute 生效，且可以通过 v-bind 显性的绑定到非根元素上。-->
-        <button v-bind="$attrs" class="yiui-button" :class="{[`theme-${theme}`]:theme}">
+    <div :size="size">
+        <button v-bind="rest" class="yiui-button" :class="{[`theme-${theme}`]:theme}">
             <slot/>
         </button>
     </div>
@@ -17,6 +16,11 @@
                 default: "button"
             }
         },
+
+        setup(props, context) {
+            const {size, ...rest} = context.attrs;
+            return {size, rest};
+        }
     };
 </script>
 
