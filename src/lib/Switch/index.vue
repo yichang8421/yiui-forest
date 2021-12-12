@@ -1,5 +1,5 @@
 <template>
-    <button @click="toggle" :class={checked:value}><span></span></button>
+    <button class="yiui-switch" @click="toggle" :class="{'yiui-checked':value}"><span></span></button>
 </template>
 
 <script lang="ts">
@@ -18,10 +18,10 @@
     };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     $h: 22px;
     $h2: $h - 4px;
-    button {
+    .yiui-switch {
         z-index: 1;
         height: $h;
         width: $h*2;
@@ -47,7 +47,7 @@
             }
         }
 
-        &.checked {
+        &.yiui-checked {
             background: blue;
 
             > span {

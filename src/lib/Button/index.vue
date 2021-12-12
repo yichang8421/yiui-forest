@@ -1,5 +1,5 @@
 <template>
-    <button class="yiui-button" :class="`theme-${theme}`">
+    <button class="yiui-button" :class="`yiui-theme-${theme}`">
         <slot/>
     </button>
 </template>
