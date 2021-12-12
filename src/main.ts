@@ -1,7 +1,7 @@
-import "./lib/yiui.scss";
 import {createApp} from "vue";
-import App from "./App.vue";
+import "./lib/yiui.scss";
 import "./index.scss";
+import App from "./App.vue";
 import {router} from "./router";
 
 

@@ -55,5 +55,26 @@
             /* 兼容Firefox(等价于 &:focus {outline: none;}) */
             border: 0;
         }
+
+        &.yiui-theme-link, &.yiui-theme-text {
+            border-color: transparent;
+            box-shadow: none;
+        }
+
+        &.yiui-theme-link {
+            color: $blue;
+
+            &:hover, &:focus {
+                color: lighten($blue, 20%);
+            }
+        }
+
+        &.yiui-theme-text {
+            color: inherit;
+
+            &:hover, &:focus {
+                background: darken(white, 5%);
+            }
+        }
     }
 </style>
