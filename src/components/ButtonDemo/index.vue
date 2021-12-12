@@ -1,5 +1,6 @@
 <template>
     <Button>HELLO</Button>
+    <Button @click="onClick" @focus="onClick" @mouseover="onClick">HELLO</Button>
     <Button theme="button">HELLO</Button>
     <Button theme="link">HELLO</Button>
     <Button theme="text">HELLO</Button>
@@ -9,6 +10,13 @@
     import Button from "../../lib/Button/index.vue";
 
     export default {
-        components: {Button}
+        components: {Button},
+        setup() {
+            const onClick = () => {
+                console.log("hello");
+            };
+
+            return {onClick};
+        }
     };
 </script>
