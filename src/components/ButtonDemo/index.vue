@@ -1,5 +1,8 @@
 <template>
     <Button>HELLO</Button>
+    <Button theme="button">HELLO</Button>
+    <Button theme="link">HELLO</Button>
+    <Button theme="text">HELLO</Button>
 </template>
 
 <script lang="ts">
