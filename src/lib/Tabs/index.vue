@@ -2,7 +2,7 @@
     <div class="yiui-tabs">
         <div class="yiui-tabs-nav" ref="navContainer">
             <div :class="{selected:t===selected}" :key="index" @click="onSelect(t)" class="yiui-tabs-nav-item"
-                 :ref="el=>{if(el) navItems[index]=el}" v-for="(t,index) in titles">
+                 :ref="el=>{if(t===selected)selectedItem = el }" v-for="(t,index) in titles">
                 {{t}}
             </div>
             <div class="yiui-tabs-nav-indicator" ref="indicator"></div>
@@ -24,23 +24,19 @@
             }
         },
         setup(props, context) {
-            const navItems = ref<HTMLDivElement[]>([]);
+            const selectedItem = ref<HTMLDivElement>(null as HTMLDivElement);
             const indicator = ref<HTMLDivElement>(null as HTMLDivElement);
             const navContainer = ref<HTMLDivElement>(null as HTMLDivElement);
 
             const indicatorRender = () => {
-                const navItemDivs = navItems.value;
-                const selectedItem = navItemDivs.filter(div => div.classList.contains(`selected`))[0];
-
-                const {width} = selectedItem.getBoundingClientRect();
+                const {width} = selectedItem.value.getBoundingClientRect();
 
                 indicator.value.style.width = width + "px";
 
-                // 关于指示条左位移量可以这样计算：indicator.left = selectedItem.left - navContainer.left
-                const {left: selectedItemLeft} = selectedItem.getBoundingClientRect();
+                const {left: selectedItemLeft} = selectedItem.value.getBoundingClientRect();
                 const {left: navContainerLeft} = navContainer.value.getBoundingClientRect();
-                // console.log(selectedItemLeft - navContainerLeft);
                 const deltaLeft = selectedItemLeft - navContainerLeft;
+
                 indicator.value.style.left = deltaLeft + "px";
             };
 
@@ -66,7 +62,7 @@
                 })[0];
             });
 
-            return {defaults, titles, onSelect, current, navItems, indicator, navContainer};
+            return {defaults, titles, onSelect, current, selectedItem, indicator, navContainer};
         }
     };
 </script>
