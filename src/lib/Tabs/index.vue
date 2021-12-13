@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-    import {ref, computed, onMounted, onUpdated} from "vue";
+    import {ref, computed, watchEffect} from "vue";
     import Tab from "../../lib/Tab/index.vue";
 
     export default {
@@ -40,8 +40,7 @@
                 indicator.value.style.left = deltaLeft + "px";
             };
 
-            onMounted(indicatorRender);
-            onUpdated(indicatorRender);
+            watchEffect(indicatorRender);
 
 
             const defaults = context.slots.default?.() || [];
