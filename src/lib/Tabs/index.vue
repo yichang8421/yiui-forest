@@ -2,10 +2,10 @@
     <div class="yiui-tabs">
         <div class="yiui-tabs-nav">
             <div :class="{selected:t===selected}" :key="index" @click="onSelect(t)" class="yiui-tabs-nav-item"
-                 v-for="(t,index) in titles">
+                 :ref="el=>{if(el) navItems[index]=el}" v-for="(t,index) in titles">
                 {{t}}
             </div>
-            <div class="yiui-tabs-nav-indicator"></div>
+            <div class="yiui-tabs-nav-indicator" ref="indicator"></div>
         </div>
         <div class="yiui-tabs-content">
             <component :is="current" :key="current.props.title" class="yiui-tabs-content-item"></component>
@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-    import {computed} from "vue";
+    import {ref, computed, onMounted} from "vue";
     import Tab from "../../lib/Tab/index.vue";
 
     export default {
@@ -24,6 +24,31 @@
             }
         },
         setup(props, context) {
+            const navItems = ref<HTMLDivElement[]>([]);
+            // @ts-ignore
+            const indicator = ref<HTMLDivElement>(null as HTMLDivElement);
+
+            // 挂载时，获取 tab 的宽度，然后将标识条宽度设置为和 tab 一样的宽度。
+            onMounted(() => {
+                // 获取全部 tab 元素。
+                // ref 的值全部存在 value 属性中
+                const divs = navItems.value;
+                // console.log(...divs);
+
+                // 找到选中的 tab
+                const result = divs.filter(div => div.classList.contains(`selected`))[0];
+                // console.log(result);
+
+                // 获取选中 tab 的宽度
+                // 元素尺寸可以使用 Element.getBoundingClientRect() 方法获取。其中包含元素的 width、height、top、right、bottom、left : 176 等属性。
+                const {width} = result.getBoundingClientRect();
+                // console.log(width);
+
+                // 将宽度设置到底部标识条上
+                // console.log(indicator.value);
+                indicator.value.style.width = width + "px";
+            });
+
             const defaults = context.slots.default?.() || [];
             defaults.forEach(tag => {
                 if (tag.type !== Tab) {
@@ -42,7 +67,7 @@
                 })[0];
             });
 
-            return {defaults, titles, onSelect, current};
+            return {defaults, titles, onSelect, current, navItems, indicator};
         }
     };
 </script>
@@ -76,7 +101,6 @@
             &-indicator {
                 position: absolute;
                 height: 3px;
-                width: 100px;
                 background: $blue;
                 left: 0;
                 bottom: 0;
