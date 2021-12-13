@@ -7,13 +7,14 @@
             </div>
         </div>
         <div class="yiui-tabs-content">
-            <component :class="{selected:c.props.title=== selected}" :is="c" :key="index" class="yiui-tabs-content-item"
-                       v-for="(c,index) in defaults"></component>
+            <!-- 渲染选中的 tab 组件时，必须告诉 vue 发生变化的组件和对应的 key ，否则组件不会渲染和更新。目前需要渲染的组件是 current，对应的 key 是 current.props.title -->
+            <component :is="current" :key="current.props.title" class="yiui-tabs-content-item"></component>
         </div>
     </div>
 </template>
 
 <script lang="ts">
+    import {computed} from "vue";
     import Tab from "../../lib/Tab/index.vue";
 
     export default {
@@ -24,7 +25,7 @@
         },
         setup(props, context) {
             const defaults = context.slots.default?.() || [];
-            // defaults 数组存放着所有子组件
+            // defaults 数组存放着 tabs 的所有子组件
             defaults.forEach(tag => {
                 if (tag.type !== Tab) {
                     throw new Error("Tabs 组件的子组件必须是 Tab");
@@ -37,7 +38,14 @@
                 context.emit("update:selected", title);
             };
 
-            return {defaults, titles, onSelect};
+            const current = computed(() => {
+                // 找到选中的组件（判断依据是当前tab的title与收到的props的title相同）。可以用 filter() 方法筛选，也可以用 find() 方法筛选。如果用 find() 方法筛选，就不用加最后的 "[0]"
+                return defaults.filter(tag => {
+                    return tag.props!.title === props.selected;
+                })[0];
+            });
+
+            return {defaults, titles, onSelect, current};
         }
     };
 </script>
@@ -70,14 +78,6 @@
 
         &-content {
             padding: 8px 0;
-
-            &-item {
-                display: none;
-
-                &.selected {
-                    display: inline-block;
-                }
-            }
         }
     }
 </style>
