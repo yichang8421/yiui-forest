@@ -23,15 +23,15 @@
             }
         },
         setup(props, context) {
-            const defaults = context.slots.default?.();
+            const defaults = context.slots.default?.() || [];
             // defaults 数组存放着所有子组件
-            defaults!.forEach(tag => {
+            defaults.forEach(tag => {
                 if (tag.type !== Tab) {
                     throw new Error("Tabs 组件的子组件必须是 Tab");
                 }
             });
 
-            const titles = defaults!.map(tag => tag.props!.title);
+            const titles = defaults.map(tag => tag.props!.title);
             const onSelect = (title: string) => {
                 // 选中 title 时，把父元素的 selected 值设为当前title 值，当当前选中的标签与 title 相等时，添加 selected 样式名。
                 context.emit("update:selected", title);
