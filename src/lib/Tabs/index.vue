@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-    import {ref, computed, watchEffect} from "vue";
+    import {ref, computed, watchEffect, onMounted} from "vue";
     import Tab from "../../lib/Tab/index.vue";
 
     export default {
@@ -28,20 +28,20 @@
             const indicator = ref<HTMLDivElement>(null as HTMLDivElement);
             const navContainer = ref<HTMLDivElement>(null as HTMLDivElement);
 
-            const indicatorRender = () => {
-                const {width} = selectedItem.value.getBoundingClientRect();
+            onMounted(() => {
+                watchEffect(() => {
+                    const {width} = selectedItem.value.getBoundingClientRect();
 
-                indicator.value.style.width = width + "px";
+                    indicator.value.style.width = width + "px";
 
-                const {left: selectedItemLeft} = selectedItem.value.getBoundingClientRect();
-                const {left: navContainerLeft} = navContainer.value.getBoundingClientRect();
-                const deltaLeft = selectedItemLeft - navContainerLeft;
+                    const {left: selectedItemLeft} = selectedItem.value.getBoundingClientRect();
+                    const {left: navContainerLeft} = navContainer.value.getBoundingClientRect();
+                    const deltaLeft = selectedItemLeft - navContainerLeft;
 
-                indicator.value.style.left = deltaLeft + "px";
-            };
+                    indicator.value.style.left = deltaLeft + "px";
+                });
 
-            watchEffect(indicatorRender);
-
+            });
 
             const defaults = context.slots.default?.() || [];
             defaults.forEach(tag => {
