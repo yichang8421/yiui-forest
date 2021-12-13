@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-    import {ref, computed, onMounted} from "vue";
+    import {ref, computed, onMounted, onUpdated} from "vue";
     import Tab from "../../lib/Tab/index.vue";
 
     export default {
@@ -28,7 +28,7 @@
             const indicator = ref<HTMLDivElement>(null as HTMLDivElement);
             const navContainer = ref<HTMLDivElement>(null as HTMLDivElement);
 
-            onMounted(() => {
+            const indicatorRender = () => {
                 const navItemDivs = navItems.value;
                 const selectedItem = navItemDivs.filter(div => div.classList.contains(`selected`))[0];
 
@@ -42,7 +42,10 @@
                 // console.log(selectedItemLeft - navContainerLeft);
                 const deltaLeft = selectedItemLeft - navContainerLeft;
                 indicator.value.style.left = deltaLeft + "px";
-            });
+            };
+
+            onMounted(indicatorRender);
+            onUpdated(indicatorRender);
 
 
             const defaults = context.slots.default?.() || [];
@@ -100,6 +103,7 @@
                 background: $blue;
                 left: 0;
                 bottom: 0;
+                transition: all 250ms;
             }
         }
 
