@@ -2,7 +2,7 @@
     <div class="layout">
         <Topnav class="nav"/>
         <div class="content">
-            <aside v-if="asideVisible">
+            <aside ref="aside" v-if="asideVisible">
                 <h2>组件列表</h2>
                 <ol>
                     <li>
@@ -27,14 +27,35 @@
 </template>
 
 <script lang="ts">
+    import {inject, Ref, ref, watchEffect} from "vue";
     import Topnav from "../../components/Topnav/index.vue";
-    import {inject, Ref} from "vue";
 
     export default {
         components: {Topnav},
         setup() {
+            const aside = ref<HTMLElement>(null as HTMLElement);
             const asideVisible = inject<Ref<boolean>>("asideVisible");
-            return {asideVisible};
+
+            watchEffect(() => {
+                // 实时监听视窗尺寸变化
+                window.onresize = () => {
+                    // console.log(aside.value);
+                    const width = document.documentElement.clientWidth;
+                    console.log(asideVisible?.value);
+                    if ((asideVisible as any).value) {
+                        if (width <= 500) {
+                            aside.value.style.display = "none";
+                        } else if (width > 500) {
+                            aside.value.style.display = "block";
+                        }
+                    } else {
+                        (asideVisible as any).value = true;
+                    }
+                    (asideVisible as any).value = width > 500;
+                };
+
+            });
+            return {asideVisible, aside};
         }
     };
 </script>
@@ -84,14 +105,16 @@
 
                 > ol {
                     > li {
-                        >a{
+                        > a {
                             display: block;
                             padding: 4px 24px;
                             border: none;
-                            &:hover{
+
+                            &:hover {
                                 color: #41b883;
                             }
                         }
+
                         > .router-link-active {
                             background: white;
                             color: #41b883;

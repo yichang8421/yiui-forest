@@ -10,13 +10,14 @@
         name: 'App',
         setup() {
             // 一开始，当窗口大于 500px 时，默认展示aside
-            const width = document.documentElement.clientWidth;
-            const asideVisible = ref(width > 500);
+            // const width = document.documentElement.clientWidth;
+            const asideVisible = ref(document.documentElement.clientWidth > 500);
             provide("asideVisible", asideVisible);
 
             // 移动端切换路由之后，关闭 aside 标签
             router.afterEach(() => {
-                if (width <= 500) {
+                if (document.documentElement.clientWidth <= 500) {
+                    console.log("appsetup", document.documentElement.clientWidth);
                     asideVisible.value = false;
                 }
             });
