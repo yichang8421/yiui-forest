@@ -10,7 +10,6 @@
         name: 'App',
         setup() {
             // 一开始，当窗口大于 500px 时，默认展示aside
-            // const width = document.documentElement.clientWidth;
             const asideVisible = ref(document.documentElement.clientWidth > 500);
             provide("asideVisible", asideVisible);
 

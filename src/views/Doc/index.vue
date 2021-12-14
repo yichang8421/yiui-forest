@@ -43,14 +43,17 @@
                     const width = document.documentElement.clientWidth;
                     console.log(asideVisible?.value);
                     if ((asideVisible as any).value) {
+                        // 当 asideVisible 为 true 时，显示 aside 显示隐藏完全由视窗宽度决定
                         if (width <= 500) {
                             aside.value.style.display = "none";
                         } else if (width > 500) {
                             aside.value.style.display = "block";
                         }
                     } else {
+                        // 当 asideVisible 为 false 时，先将其置为 true。渲染后，显示隐藏由视窗决定。
                         (asideVisible as any).value = true;
                     }
+                    // 重置 asideVisible 的值
                     (asideVisible as any).value = width > 500;
                 };
 
