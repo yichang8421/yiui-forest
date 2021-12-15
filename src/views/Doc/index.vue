@@ -44,9 +44,13 @@
                     if ((asideVisible as any).value) {
                         // 当 asideVisible 为 true 时，显示 aside 显示隐藏完全由视窗宽度决定
                         if (width <= 500) {
-                            aside.value.style.display = "none";
+                            try {
+                                aside.value.style.display = "none";
+                            } catch (e) {}
                         } else if (width > 500) {
-                            aside.value.style.display = "block";
+                            try {
+                                aside.value.style.display = "block";
+                            } catch (e) {}
                         }
                     } else {
                         // 当 asideVisible 为 false 时，先将其置为 true。渲染后，显示隐藏由视窗决定。
@@ -101,7 +105,7 @@
 
                 > h2 {
                     margin-bottom: 4px;
-                    padding: 4px 16px;
+                    padding: 8px 20px;
                     font-weight: bold;
                 }
 
@@ -109,7 +113,7 @@
                     > li {
                         > a {
                             display: block;
-                            padding: 4px 24px;
+                            padding: 8px 28px;
                             border: none;
 
                             &:hover {

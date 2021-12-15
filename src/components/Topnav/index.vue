@@ -11,8 +11,20 @@
             </svg>
         </router-link>
         <ul class="menu">
-            <li>菜单</li>
-            <li>菜单</li>
+            <li>
+                <a href="https://github.com/yichang8421" target="_blank">
+                    <svg>
+                        <use xlink:href="#icon-GitHub"></use>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://yichang8421.github.io/" target="_blank">
+                    <svg>
+                        <use xlink:href="#icon-cnblogs"></use>
+                    </svg>
+                </a>
+            </li>
         </ul>
     </div>
 </template>
@@ -24,7 +36,6 @@
         setup() {
             const asideVisible = inject<Ref<boolean>>("asideVisible");
             const selectBtnVisible = inject<Ref<boolean>>("selectBtnVisible");
-            console.log(selectBtnVisible?.value);
 
             const toggleAside = () => {
                 (asideVisible as any).value = !(asideVisible as any).value;
@@ -34,7 +45,7 @@
                     selectBtnVisible.value = false;
                 }
             };
-            return {toggleAside, selectBtnVisible,switchBtnVisible};
+            return {toggleAside, selectBtnVisible, switchBtnVisible};
         }
     };
 </script>
@@ -49,15 +60,23 @@
         top: 0;
         left: 0;
         justify-content: space-between;
-        border: 1px solid red;
 
         > a {
+            height: 100%;
+
             > .logo {
-                width: 28px;
-                height: 28px;
+                width: 32px;
+                height: 32px;
                 max-width: 6em;
+                margin-left: 12px;
                 margin-right: auto;
                 top: 0;
+                display: block;
+                transition: 200ms linear;
+
+                &:hover {
+                    opacity: 70%;
+                }
             }
 
             &:hover {
@@ -69,9 +88,28 @@
             display: flex;
             white-space: nowrap;
             flex-wrap: nowrap;
+            margin-right: 8px;
 
             > li {
-                margin: 0 1px;
+                margin: 0 8px;
+
+                > a {
+                    display: block;
+                    border-bottom: none;
+
+                    > svg {
+                        width: 32px;
+                        height: 32px;
+                        top: 0;
+                        display: block;
+                        transition: 200ms linear;
+                        opacity: 50%;
+
+                        &:hover {
+                            opacity: 100%;
+                        }
+                    }
+                }
             }
         }
 
@@ -87,12 +125,13 @@
 
                 > a {
                     margin-left: 50%;
+                    transform: translate(-50%);
                 }
 
                 > .toggleAside {
                     > .select {
-                        width: 24px;
-                        height: 24px;
+                        width: 22px;
+                        height: 20px;
                     }
 
                     display: inline-block;
