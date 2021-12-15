@@ -1,7 +1,15 @@
 <template>
     <div class="topnav">
-        <span class="toggleAside" @click="toggleAside"></span>
-        <router-link to="/" class="logo">LOGO</router-link>
+        <span @click="toggleAside" class="toggleAside" v-if="selectBtnVisible">
+            <svg class="select">
+                <use xlink:href="#icon-xuanxiang"></use>
+            </svg>
+        </span>
+        <router-link @click="switchBtnVisible" to="/">
+            <svg class="logo">
+                <use xlink:href="#icon-food-pizza"></use>
+            </svg>
+        </router-link>
         <ul class="menu">
             <li>菜单</li>
             <li>菜单</li>
@@ -15,11 +23,18 @@
     export default {
         setup() {
             const asideVisible = inject<Ref<boolean>>("asideVisible");
+            const selectBtnVisible = inject<Ref<boolean>>("selectBtnVisible");
+            console.log(selectBtnVisible?.value);
 
             const toggleAside = () => {
                 (asideVisible as any).value = !(asideVisible as any).value;
             };
-            return {toggleAside};
+            const switchBtnVisible = () => {
+                if (selectBtnVisible) {
+                    selectBtnVisible.value = false;
+                }
+            };
+            return {toggleAside, selectBtnVisible,switchBtnVisible};
         }
     };
 </script>
@@ -33,13 +48,20 @@
         z-index: 10;
         top: 0;
         left: 0;
+        justify-content: space-between;
+        border: 1px solid red;
 
-        > .logo {
-            max-width: 6em;
-            margin-right: auto;
+        > a {
+            > .logo {
+                width: 28px;
+                height: 28px;
+                max-width: 6em;
+                margin-right: auto;
+                top: 0;
+            }
 
             &:hover {
-                border: none;
+                border-bottom: none;
             }
         }
 
@@ -58,24 +80,30 @@
         }
 
         @media (max-width: 500px) {
-            > .menu {
-                display: none;
-            }
-            > .logo {
-                margin: 0 auto;
-            }
-            > .toggleAside {
-                display: inline-block;
-                width: 24px;
-                height: 24px;
-                background: #94deca;
-                position: absolute;
-                left: 16px;
-                top: 50%;
-                transform: translateY(-50%);
+            & {
+                > .menu {
+                    display: none;
+                }
 
-                &:hover {
-                    cursor: pointer;
+                > a {
+                    margin-left: 50%;
+                }
+
+                > .toggleAside {
+                    > .select {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    display: inline-block;
+                    position: absolute;
+                    left: 16px;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
             }
         }

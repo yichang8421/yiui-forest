@@ -41,7 +41,6 @@
                 window.onresize = () => {
                     // console.log(aside.value);
                     const width = document.documentElement.clientWidth;
-                    console.log(asideVisible?.value);
                     if ((asideVisible as any).value) {
                         // 当 asideVisible 为 true 时，显示 aside 显示隐藏完全由视窗宽度决定
                         if (width <= 500) {
@@ -79,7 +78,7 @@
             /*background: gold;*/
             display: flex;
             flex: 1;
-            padding-top: 52px;
+            padding-top: 70px;
             padding-left: 150px;
             width: 100vw;
             @media (max-width: 500px) {
@@ -98,7 +97,7 @@
                 position: fixed;
                 top: 0;
                 left: 0;
-                padding-top: 100px;
+                padding-top: 120px;
 
                 > h2 {
                     margin-bottom: 4px;
