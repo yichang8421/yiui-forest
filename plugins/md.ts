@@ -13,10 +13,10 @@ export function md() {
         configureServer: [ // 用于开发
             async ({app}) => {
                 app.use(async (ctx, next) => { // koa
-                    if (ctx.path.endsWith(".md")) {
-                        ctx.type = "js";
+                    if (ctx.path.endsWith(".md")) {     // 当路径为 .md 结尾时
+                        ctx.type = "js";      // 将文件类型变为 js
                         const filePath = path.join(process.cwd(), ctx.path);
-                        ctx.body = mdToJs(fs.readFileSync(filePath).toString());
+                        ctx.body = mdToJs(fs.readFileSync(filePath).toString());      // 文件内容变成 js
                     } else {
                         await next();
                     }
