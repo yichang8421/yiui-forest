@@ -83,7 +83,7 @@
     }
 
     .yiui-topNavAndBanner {
-        background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+        background: linear-gradient(20deg, #e3fffd 0%, #b7e9e6 100%);
         clip-path: ellipse(80% 60% at 50% 40%);
     }
 
@@ -120,7 +120,7 @@
     .features {
         // 水平居中对齐
         margin: 64px auto;
-        width: 400px;
+        width: 300px;
         @media (min-width: 800px) {
             width: 800px;
         }
@@ -136,7 +136,7 @@
                 display: inline-block;
 
                 > a {
-                    width: 400px;
+                    width: 300px;
                     margin: 16px 0;
                     display: grid;
                     justify-content: start;
@@ -160,7 +160,7 @@
                     }
 
                     > p {
-                        grid-area: text
+                        grid-area: text;
                     }
 
                     transition: 150ms;

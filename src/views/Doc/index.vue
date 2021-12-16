@@ -3,6 +3,18 @@
         <Topnav class="nav"/>
         <div class="content">
             <aside ref="aside" v-if="asideVisible">
+                <h2>文档</h2>
+                <ol>
+                    <li>
+                        <router-link to="/doc/intro">介绍</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/install">安装</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/get-start">开始使用</router-link>
+                    </li>
+                </ol>
                 <h2>组件列表</h2>
                 <ol>
                     <li>
@@ -93,7 +105,7 @@
                 flex-shrink: 0;
                 z-index: 2;
 
-                background: yellowgreen;
+                background: #43b784;
                 width: 150px;
                 height: 100vh;
                 padding: 16px 0;
@@ -117,7 +129,7 @@
                             border: none;
 
                             &:hover {
-                                color: #41b883;
+                                color: #f0a732;
                             }
                         }
 
@@ -131,7 +143,7 @@
 
             > main {
                 flex: 1;
-                padding: 16px;
+                padding: 16px 32px;
                 background: white;
                 overflow: auto;
             }

@@ -1,4 +1,5 @@
 import {createApp} from "vue";
+import "github-markdown-css";
 import "./lib/yiui.scss";
 import "./index.scss";
 import App from "./App.vue";
