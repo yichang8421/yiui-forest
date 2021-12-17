@@ -28,7 +28,7 @@
         border: none;
         background: gray;
         border-radius: $h/2;
-        position: absolute;
+        position: relative;
 
         span {
             position: absolute;
