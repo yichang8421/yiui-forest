@@ -46,13 +46,13 @@
                 context.emit("update:visible", false);
             };
             const ok = () => {
-                if (props.onOK?.() !== false) {
+                if (props.onOK && props.onOK() !== false) {
                     console.log("OK 执行完毕");
                     close();
                 }
             };
             const cancel = () => {
-                if(props.onCancel?.()!==false){
+                if(props.onCancel && props.onCancel()!==false){
                     context.emit("cancel");
                     close();
                 }
