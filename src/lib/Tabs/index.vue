@@ -39,7 +39,7 @@
                     const deltaLeft = selectedItemLeft - navContainerLeft;
 
                     indicator.value.style.left = deltaLeft + "px";
-                });
+                }, {flush: "post"});
 
             });
 

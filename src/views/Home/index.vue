@@ -6,7 +6,7 @@
             <h2>一个美观的 UI 框架</h2>
             <p class="actions">
                 <a href="https://github.com/yichang8421" target="_blank">GitHub</a>
-                <router-link @click="switchBtnVisible" to="/doc">开始</router-link>
+                <router-link @click="switchBtnVisible" to="/doc" >开始</router-link>
             </p>
         </div>
     </div>
