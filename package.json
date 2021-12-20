@@ -10,9 +10,10 @@
   },
   "dependencies": {
     "github-markdown-css": "^5.1.0",
+    "marked": "4.0.7",
+    "prismjs": "^1.25.0",
     "vue": "3.0.0",
-    "vue-router": "4.0.0-beta.3",
-    "marked": "4.0.7"
+    "vue-router": "4.0.0-beta.3"
   },
   "devDependencies": {
     "@types/vue": "^2.0.0",
