@@ -1,43 +1,48 @@
 <template>
     <div>
-        <h1>Switch 组件示例</h1>
+        <h1>Switch 组件示例 </h1>
         <div class="demo">
             <h2>常规用法</h2>
             <div class="demo-component">
-                <Switch v-model:value="selected"/>
+                <SwitchDemo1/>
             </div>
             <div class="demo-actions">
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code">
-                <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
+                <pre>{{SwitchDemo1["__sourceCode"]}}</pre>
             </div>
         </div>
         <div class="demo">
-            <h2>支持 disable</h2>
+            <h2>支持 disabled </h2>
             <div class="demo-component">
-                <Switch disabled v-model:value="selected"/>
+                <SwitchDemo2/>
             </div>
             <div class="demo-actions">
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code">
-                <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+                <pre>{{SwitchDemo2["__sourceCode"]}}</pre>
             </div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-    import Switch from "../../lib/Switch/index.vue";
-    import Button from "../../lib/Button/index.vue";
     import {ref} from "vue";
 
+    import Switch from "../../lib/Switch/index.vue";
+    import Button from "../../lib/Button/index.vue";
+    import SwitchDemo1 from "../../components/SwitchDemo/Switch1.demo.vue";
+    import SwitchDemo2 from "../../components/SwitchDemo/Switch2.demo.vue";
+
+    // console.log(SwitchDemo1["__sourceCode"])
+
     export default {
-        components: {Switch, Button},
+        components: {Switch, Button, SwitchDemo1, SwitchDemo2},
         setup() {
-            const selected = ref(false);
-            return {selected};
+            const bool = ref(false);
+            return {bool,SwitchDemo1,SwitchDemo2};
         }
     };
 </script>
@@ -56,6 +61,10 @@
 
         &-component {
             padding: 16px;
+
+            > [disabled] {
+                cursor: not-allowed;
+            }
         }
 
         &-actions {
