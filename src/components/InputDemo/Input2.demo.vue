@@ -6,7 +6,7 @@
     <Input placeholder="请输入账号" v-model:content="content"/>
     <Input placeholder="请输入密码" type="password" v-model:password="password"/>
     <span>{{content}}</span>
-    <span>{{password}}</span>
+    <span style="margin-left:8px">{{password}}</span>
 </template>
 
 <script lang="ts">

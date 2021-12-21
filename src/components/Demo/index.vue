@@ -5,7 +5,7 @@
             <component :is="component"/>
         </div>
         <div class="demo-actions">
-            <Button @click="toggleCodeVisible">查看代码</Button>
+            <Button @click="toggleCodeVisible">{{codeVisible?"隐藏代码":"显示代码"}}</Button>
         </div>
         <div class="demo-code">
             <pre class="language-html" v-html="html" v-if="codeVisible"/>
@@ -64,6 +64,8 @@
         &-actions {
             padding: 8px 16px;
             border-top: 1px dashed $border-color;
+            display: flex;
+            justify-content: center;
         }
 
         &-code {

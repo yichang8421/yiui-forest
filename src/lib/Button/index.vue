@@ -53,6 +53,13 @@
     $red: #ff2600;
     $gray: gray;
     $radius: 4px;
+    $hover-color: #69c2e2;
+    $main-color: #d3f7f5;
+    $hover-main: #ff8000;
+    $success-color: #129646;
+    $danger-color: $red;
+    $warning-color: #fffbe5;
+
     .yiui-button {
         height: $h;
         padding: 0 12px;
@@ -72,7 +79,7 @@
 
         & + & { // 只有相邻两个元素才有8px左侧外边距
             // +号为兄弟选择器。a + b 选择紧邻在 a 元素后面的 b 元素
-            margin-left: 8px;
+            margin-left: 12px;
         }
 
         &:hover, &:focus {
@@ -81,6 +88,7 @@
         }
 
         &:focus {
+            // 去除边框
             outline: none;
         }
 
@@ -122,61 +130,64 @@
             padding: 0 16px;
         }
 
-        &.yiui-theme-button {
-            &.yiui-level-importent {
-                background: $blue;
-                color: white;
-                border-color: $blue;
+        /*&.yiui-theme-button {*/
+        &.yiui-level-importent {
+            background: $blue;
+            color: white;
+            border-color: $blue;
 
-                &:hover, &:focus {
-                    background: darken($blue, 10%);
-                    border-color: darken($blue, 10%);
-                }
-            }
-
-            &.yiui-level-danger {
-                background: $red;
-                color: white;
-                border-color: $red;
-
-                &:hover, &:focus {
-                    background: darken($red, 10%);
-                    border-color: darken($red, 10%);
-                }
+            &:hover, &:focus {
+                background: darken($blue, 10%);
+                border-color: darken($blue, 10%);
             }
         }
 
-        &.yiui-theme-link {
-            &.yiui-level-importent {
-                font-weight: bolder;
-            }
+        &.yiui-level-danger {
+            background: $red;
+            color: white;
+            border-color: $red;
 
-            &.yiui-level-danger {
-                color: $red;
-
-                &:hover, &:focus {
-                    color: darken($red, 10%);
-                }
+            &:hover, &:focus {
+                background: darken($red, 10%);
+                border-color: darken($red, 10%);
             }
         }
 
-        &.yiui-theme-text {
-            &.yiui-level-importent {
-                color: $blue;
+        /*}*/
 
-                &:hover, &:focus {
-                    color: darken($blue, 10%);
-                }
-            }
+        /*&.yiui-theme-link {*/
+        &.yiui-level-importent {
+            font-weight: bolder;
+        }
 
-            &.yiui-level-danger {
-                color: $red;
+        &.yiui-level-danger {
+            color: $red;
 
-                &:hover, &:focus {
-                    color: darken($red, 10%);
-                }
+            &:hover, &:focus {
+                color: darken($red, 10%);
             }
         }
+
+        /*}*/
+
+        /*&.yiui-theme-text {*/
+        &.yiui-level-importent {
+            color: $blue;
+
+            &:hover, &:focus {
+                color: darken($blue, 10%);
+            }
+        }
+
+        &.yiui-level-danger {
+            color: $red;
+
+            &:hover, &:focus {
+                color: darken($red, 10%);
+            }
+        }
+
+        /*}*/
 
         &[disabled] {
             cursor: not-allowed;
@@ -205,6 +216,43 @@
             }
             100% {
                 transform: rotate(0deg)
+            }
+        }
+
+        &.yiui-theme {
+            &-button {
+                &:hover {
+                    background: $hover-color;
+                    color: white;
+                }
+            }
+
+            &-main {
+                border: none;
+                background: $main-color;
+
+                &:hover {
+                    background: $hover-main;
+                    color: white;
+                }
+            }
+
+            &-success {
+                border: none;
+                background: $success-color;
+                color: white;
+                &:hover {
+                    background: $hover-main;
+                    color: white;
+                }
+            }
+
+            &-danger {
+                background: $danger-color;
+            }
+
+            &-warning {
+                background: $warning-color;
             }
         }
     }

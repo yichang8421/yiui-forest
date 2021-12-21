@@ -60,5 +60,12 @@
                 }
             }
         }
+
+        &[disabled] {
+            &:hover {
+                background: red;
+
+            }
+        }
     }
 </style>
