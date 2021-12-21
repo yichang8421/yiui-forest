@@ -20,7 +20,7 @@
                 console.log("Do something...");
             };
 
-            return {onClick, ButtonDemo1, ButtonDemo2, ButtonDemo3, ButtonDemo4, Demo};
+            return {onClick, ButtonDemo1, ButtonDemo2, ButtonDemo3, ButtonDemo4};
         }
     };
 </script>

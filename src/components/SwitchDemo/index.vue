@@ -14,7 +14,7 @@
     export default {
         components: {Demo},
         setup() {
-            return {SwitchDemo1, SwitchDemo2,Demo};
+            return {SwitchDemo1, SwitchDemo2};
         }
     };
 </script>

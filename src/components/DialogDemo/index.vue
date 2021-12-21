@@ -14,7 +14,7 @@
     export default {
         components: {DialogDemo1, DialogDemo2, Demo},
         setup() {
-            return {DialogDemo1, DialogDemo2, Demo};
+            return {DialogDemo1, DialogDemo2};
         }
     };
 </script>

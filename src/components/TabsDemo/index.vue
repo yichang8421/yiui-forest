@@ -8,9 +8,9 @@
     import Demo from "../../components/Demo/index.vue";
 
     export default {
-        components: {Demo, TabsDemo1},
+        components: {TabsDemo1, Demo},
         setup() {
-            return {TabsDemo1, Demo};
+            return {TabsDemo1};
         }
     };
 </script>
