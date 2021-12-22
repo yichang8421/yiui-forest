@@ -85,6 +85,9 @@
 </script>
 
 <style lang="scss" scoped>
+    $aside-background: #a24350;
+    $ahover-color: #f0a732;
+
     .layout {
         flex: 1;
         display: flex;
@@ -92,8 +95,13 @@
         height: 100vh;
         overflow-x: hidden;
 
-        > .nav {
+        .nav {
             flex-shrink: 0;
+            background: linear-gradient(
+                            90deg,
+                            #a58ca6 0%,
+                            #f2dad5 100%
+            );
         }
 
         > .content {
@@ -106,12 +114,13 @@
             @media (max-width: 500px) {
                 padding-left: 0;
             }
+            background: #c35c53;
 
             > aside {
                 flex-shrink: 0;
                 z-index: 2;
 
-                background: #43b784;
+                background: $aside-background;
                 width: 150px;
                 height: 100vh;
                 padding: 16px 0;
@@ -135,13 +144,13 @@
                             border: none;
 
                             &:hover {
-                                color: #f0a732;
+                                color: $ahover-color;
                             }
                         }
 
                         > .router-link-active {
                             background: white;
-                            color: #41b883;
+                            color: $aside-background;
                         }
                     }
                 }

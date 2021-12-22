@@ -60,7 +60,7 @@
         top: 0;
         left: 0;
         justify-content: space-between;
-        background: linear-gradient(175deg, #e3fffd 0%, #b7e9e6 100%);
+        opacity: 100%;
 
         > a {
             height: 100%;

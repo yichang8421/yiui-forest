@@ -4,8 +4,8 @@
         <div class="demo-component">
             <component :is="component"/>
         </div>
-        <div class="demo-actions">
-            <Button @click="toggleCodeVisible">{{codeVisible?"隐藏代码":"显示代码"}}</Button>
+        <div @click="toggleCodeVisible" class="demo-actions">
+            {{codeVisible?"隐藏代码":"显示代码"}}
         </div>
         <div class="demo-code">
             <pre class="language-html" v-html="html" v-if="codeVisible"/>
@@ -43,6 +43,7 @@
 
 <style lang="scss">
     $border-color: #d9d9d9;
+    $action-color: #f5b764;
     .demo {
         border: 1px solid $border-color;
         margin: 16px 0 32px;
@@ -66,6 +67,11 @@
             border-top: 1px dashed $border-color;
             display: flex;
             justify-content: center;
+
+            &:hover {
+                background: $action-color;
+                color: #a24350;
+            }
         }
 
         &-code {

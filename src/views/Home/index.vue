@@ -1,63 +1,65 @@
 <template>
-    <div class="yiui-topNavAndBanner">
+    <div class="yiui-home">
+        <!--        <div class="yiui-topNavAndBanner">-->
         <Topnav/>
         <div class="banner">
-            <h1>EUI</h1>
-            <h2>一个美观的 UI 框架</h2>
+            <h1>申易畅 UI</h1>
+            <h2>一个美观好用的 UI 框架</h2>
             <p class="actions">
                 <a href="https://github.com/yichang8421" target="_blank">GitHub</a>
-                <router-link @click="switchBtnVisible" to="/doc" >开始</router-link>
+                <router-link @click="switchBtnVisible" to="/doc">开始</router-link>
             </p>
         </div>
-    </div>
-    <div class="features">
-        <ul>
-            <li>
-                <a class="selected" href="https://v3.vuejs.org/guide/introduction.html" target="_blank">
-                    <svg>
-                        <use xlink:href="#icon-Vue"></use>
-                    </svg>
-                    <h3>基于 Vue 3</h3>
-                    <p>骄傲地使用了 Vue 3 Composition API</p>
-                </a>
-            </li>
-            <li>
-                <a class="selected" href="https://www.typescriptlang.org/docs/" target="_blank">
-                    <svg>
-                        <use xlink:href="#icon-typescript-def"></use>
-                    </svg>
-                    <h3>基于 TypeScript </h3>
-                    <p>源代码采用 TypeScript 书写（非严格检查）</p>
-                </a>
-            </li>
-            <li>
-                <a href="#" target="_blank">
-                    <svg>
-                        <use xlink:href="#icon-zhongduan"></use>
-                    </svg>
-                    <h3>代码易读</h3>
-                    <p>每个组件的源代码都极其简洁</p>
-                </a>
-            </li>
-            <li>
-                <a class="selected" href="http://en.sass.hk/docs/" target="_blank">
-                    <svg>
-                        <use xlink:href="#icon-scss"></use>
-                    </svg>
-                    <h3>代码易读</h3>
-                    <p>每个组件的源代码都极其简洁</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <svg>
-                        <use xlink:href="#icon-food-cookie"></use>
-                    </svg>
-                    <h3>代码易读</h3>
-                    <p>每个组件的源代码都极其简洁</p>
-                </a>
-            </li>
-        </ul>
+        <!--        </div>-->
+        <div class="features">
+            <ul>
+                <li>
+                    <a class="selected" href="https://www.typescriptlang.org/docs/" target="_blank">
+                        <svg>
+                            <use xlink:href="#icon-typescript-def"></use>
+                        </svg>
+                        <h3>基于 TypeScript </h3>
+                        <p>源代码采用 TypeScript 书写</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="selected" href="https://v3.vuejs.org/guide/introduction.html" target="_blank">
+                        <svg>
+                            <use xlink:href="#icon-Vue"></use>
+                        </svg>
+                        <h3>基于 Vue 3</h3>
+                        <p>源代码使用 Vue 3 Composition API</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">
+                        <svg>
+                            <use xlink:href="#icon-zhongduan"></use>
+                        </svg>
+                        <h3>多段适配</h3>
+                        <p>适配移动端、PC端</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="selected" href="http://en.sass.hk/docs/" target="_blank">
+                        <svg>
+                            <use xlink:href="#icon-scss"></use>
+                        </svg>
+                        <h3>使用 Sass</h3>
+                        <p>样式结构清晰</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg>
+                            <use xlink:href="#icon-food-cookie"></use>
+                        </svg>
+                        <h3>代码易读</h3>
+                        <p>每个组件的源代码都极其简洁</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -82,10 +84,18 @@
         border-bottom: none;
     }
 
-    .yiui-topNavAndBanner {
-        background: linear-gradient(20deg, #e3fffd 0%, #b7e9e6 100%);
-        clip-path: ellipse(80% 60% at 50% 40%);
+    .yiui-home {
+        height: 100%;
+        background: url("../../img/background.png") no-repeat fixed center;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
     }
+
+    /*.yiui-topNavAndBanner {*/
+    /*background: linear-gradient(20deg, #e3fffd 0%, #b7e9e6 100%);*/
+    /*clip-path: ellipse(80% 60% at 50% 40%);*/
+    /*}*/
 
     .banner {
         padding: 110px 0;
@@ -94,6 +104,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        color: #414b5b;
+
+        h1, h2 {
+            color: #e8c5c7;
+            text-shadow: .2rem 0rem .5rem #c35c53, -.2rem 0rem .5rem #c35c53, 0rem .2rem .5rem #c35c53, 0rem -.2rem .5rem #c35c53;
+        }
 
         > .actions {
             padding: 8px 0;
@@ -134,6 +150,7 @@
 
             > li {
                 display: inline-block;
+                color: white;
 
                 > a {
                     width: 300px;
