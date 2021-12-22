@@ -1,5 +1,5 @@
 <demo>
-    左右结构
+    左侧为侧边栏
 </demo>
 
 <template>

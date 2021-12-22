@@ -1,5 +1,5 @@
 <demo>
-    左右结构
+    顶部为导航栏
 </demo>
 
 <template>

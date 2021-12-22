@@ -49,12 +49,12 @@
 
         > h2 {
             font-size: 20px;
-            padding: 8px 16px;
+            padding: 8px 24px;
             border-bottom: 1px solid $border-color;
         }
 
         &-component {
-            padding: 16px;
+            padding: 16px 24px;
 
             > [disabled] {
                 cursor: not-allowed;
@@ -69,7 +69,7 @@
         }
 
         &-code {
-            padding: 8px 16px;
+            padding: 16px 24px;
             border-top: 1px dashed $border-color;
 
             > pre {

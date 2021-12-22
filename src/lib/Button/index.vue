@@ -231,7 +231,7 @@
                 border: none;
                 background: $main-color;
 
-                &:hover {
+                &:hover, &:focus {
                     background: $hover-main;
                     color: white;
                 }
@@ -241,7 +241,8 @@
                 border: none;
                 background: $success-color;
                 color: white;
-                &:hover {
+
+                &:hover, &:focus {
                     background: $hover-main;
                     color: white;
                 }

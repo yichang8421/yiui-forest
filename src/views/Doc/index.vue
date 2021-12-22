@@ -21,9 +21,6 @@
                         <router-link to="/doc/button">Button 组件</router-link>
                     </li>
                     <li>
-                        <router-link to="/doc/switch">Switch 组件</router-link>
-                    </li>
-                    <li>
                         <router-link to="/doc/input">Input 组件</router-link>
                     </li>
                     <li>
@@ -31,6 +28,9 @@
                     </li>
                     <li>
                         <router-link to="/doc/tabs">Tabs 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/switch">Switch 组件</router-link>
                     </li>
                     <li>
                         <router-link to="/doc/layout">Layout 组件</router-link>

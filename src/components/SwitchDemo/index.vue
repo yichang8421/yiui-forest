@@ -1,8 +1,10 @@
 <template>
     <div>
         <h1>Switch 示例</h1>
+        <p style="margin: 16px 0;">开关组件。</p>
         <Demo :component="SwitchDemo1"/>
         <Demo :component="SwitchDemo2"/>
+        <Attributes :data="data"/>
     </div>
 </template>
 
@@ -10,11 +12,28 @@
     import SwitchDemo1 from "../../components/SwitchDemo/Switch1.demo.vue";
     import SwitchDemo2 from "../../components/SwitchDemo/Switch2.demo.vue";
     import Demo from "../../components/Demo/index.vue";
+    import Attributes from "../../components/Attributes/index.vue";
 
     export default {
-        components: {Demo},
+        components: {Demo, Attributes},
         setup() {
-            return {SwitchDemo1, SwitchDemo2};
+            const data = [
+                {
+                    params: "value",
+                    desc: "是否选中",
+                    type: "Boolean",
+                    select: "true | false",
+                    default: "false",
+                },
+                {
+                    params: "disabled",
+                    desc: "是否禁用",
+                    type: "Boolean",
+                    select: "true | false",
+                    default: "false",
+                },
+            ];
+            return {SwitchDemo1, SwitchDemo2, data};
         }
     };
 </script>
