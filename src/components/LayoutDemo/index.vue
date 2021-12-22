@@ -26,23 +26,25 @@
         <Demo :component="LayoutDemo3"/>
         <Demo :component="LayoutDemo4"/>
         <Attributes :data="data"/>
+        <Pagejump :last-page="{ route: '/doc/switch', content: 'Switch 组件' }"/>
     </div>
 </template>
 
 <script lang="ts">
     import "prismjs";
     import "prismjs/themes/prism.css";
-
-    const Prism = (window as any).Prism;
     import LayoutDemo1 from "../../components/LayoutDemo/Layout1.demo.vue";
     import LayoutDemo2 from "../../components/LayoutDemo/Layout2.demo.vue";
     import LayoutDemo3 from "../../components/LayoutDemo/Layout3.demo.vue";
     import LayoutDemo4 from "../../components/LayoutDemo/Layout4.demo.vue";
     import Demo from "../../components/Demo/index.vue";
     import Attributes from "../../components/Attributes/index.vue";
+    import Pagejump from "../../components/Pagejump/index.vue";
+
+    const Prism = (window as any).Prism;
 
     export default {
-        components: {Demo, Attributes},
+        components: {Demo, Attributes, Pagejump},
         setup() {
             const data = [
                 {

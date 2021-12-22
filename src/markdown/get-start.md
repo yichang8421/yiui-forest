@@ -23,3 +23,5 @@
   }
 </script>
 ```
+
+现在开始啦：[Button 组件](#/doc/button)

@@ -5,6 +5,8 @@
         <Demo :component="SwitchDemo1"/>
         <Demo :component="SwitchDemo2"/>
         <Attributes :data="data"/>
+        <Pagejump :lastPage="{ route: '/doc/tabs', content: 'Tab' }"
+                  :nextPage="{ route: '/doc/layout', content: 'Layout 组件' }"/>
     </div>
 </template>
 
@@ -13,9 +15,10 @@
     import SwitchDemo2 from "../../components/SwitchDemo/Switch2.demo.vue";
     import Demo from "../../components/Demo/index.vue";
     import Attributes from "../../components/Attributes/index.vue";
+    import Pagejump from "../../components/Pagejump/index.vue";
 
     export default {
-        components: {Demo, Attributes},
+        components: {Demo, Attributes, Pagejump},
         setup() {
             const data = [
                 {

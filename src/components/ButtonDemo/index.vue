@@ -6,6 +6,8 @@
     <Demo :component="ButtonDemo3"/>
     <Demo :component="ButtonDemo4"/>
     <Attributes :data="data"/>
+    <Pagejump :last-page="{ route: '/doc/get-start', content: '开始使用' }"
+              :nextPage="{ route: '/doc/input', content: 'Input 组件' }"/>
 </template>
 
 <script lang="ts">
@@ -15,9 +17,10 @@
     import ButtonDemo4 from "../../components/ButtonDemo/Button4.Demo.vue";
     import Demo from "../../components/Demo/index.vue";
     import Attributes from "../../components/Attributes/index.vue";
+    import Pagejump from "../../components/Pagejump/index.vue";
 
     export default {
-        components: {ButtonDemo1, ButtonDemo2, ButtonDemo3, ButtonDemo4, Demo, Attributes},
+        components: {ButtonDemo1, ButtonDemo2, ButtonDemo3, ButtonDemo4, Demo, Attributes, Pagejump},
         setup() {
             const data = [
                 {

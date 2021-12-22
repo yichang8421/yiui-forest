@@ -3,15 +3,18 @@
     <p style="margin: 16px 0;">导航标签组件。</p>
     <Demo :component="TabsDemo1"/>
     <Attributes :data="data"/>
+    <Pagejump :lastPage="{ route: '/doc/dialog', content: 'Tabs 组件' }"
+              :nextPage="{ route: '/doc/switch', content: 'Switch 组件' }"/>
 </template>
 
 <script lang="ts">
     import TabsDemo1 from "../../components/TabsDemo/Tabs1.Demo.vue";
     import Demo from "../../components/Demo/index.vue";
     import Attributes from "../../components/Attributes/index.vue";
+    import Pagejump from "../../components/Pagejump/index.vue";
 
     export default {
-        components: {TabsDemo1, Demo, Attributes},
+        components: {TabsDemo1, Demo, Attributes, Pagejump},
         setup() {
             const data = [
                 {
