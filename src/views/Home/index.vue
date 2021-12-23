@@ -3,7 +3,7 @@
         <!--        <div class="yiui-topNavAndBanner">-->
         <Topnav/>
         <div class="banner">
-            <h1>申易畅 UI</h1>
+            <h1>森林 UI</h1>
             <h2>一个美观好用的 UI 框架</h2>
             <p class="actions">
                 <a href="https://github.com/yichang8421" target="_blank">GitHub</a>

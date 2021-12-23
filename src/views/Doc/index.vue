@@ -39,6 +39,8 @@
             </aside>
             <main>
                 <router-view/>
+                <div style="overflow-y:auto;">
+                </div>
             </main>
         </div>
     </div>
@@ -161,6 +163,18 @@
                 padding: 16px 32px;
                 background: white;
                 overflow: auto;
+                /*scrollbar-width: none;*/
+                /*-ms-overflow-style: none;*/
+
+                /*&:hover ::-webkit-scrollbar-thumb {*/
+                /*    background: rgba(0, 0, 0, 0.1);*/
+                /*    border: 1px solid red;*/
+                /*}*/
+
+                /*::-webkit-scrollbar {*/
+                /*    width: 12px;*/
+                /*}*/
+
             }
         }
     }

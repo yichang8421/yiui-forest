@@ -2,11 +2,11 @@
 
 请先[安装](#/doc/install)本组件库。
 
-然后在你的代码中写入下面的代码
+引入 UI 组件
 
-```import {Button, Tabs, Switch, Dialog} from "king-ui"```
+```import {Button, Tabs, Switch, Dialog, Input, Layout} from "forest-ui";```
 
-就可以使用我提供的组件了。
+
 
 ## Vue 单文件组件
 
@@ -17,7 +17,7 @@
   <div><Button>按钮</Button></div>
 </template>
 <script>
-  import {Button, Tabs, Switch, Dialog} from "king-ui"
+  import {Button, Tabs, Switch, Dialog, Input, Layout} from "forest-ui";
   export default {
     components: {Button}
   }
