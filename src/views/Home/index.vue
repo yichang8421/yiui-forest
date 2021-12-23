@@ -1,5 +1,5 @@
 <template>
-    <div class="yiui-home">
+    <div :style="{background:`url(${background}) no-repeat fixed center`}" class="yiui-home">
         <!--        <div class="yiui-topNavAndBanner">-->
         <Topnav/>
         <div class="banner">
@@ -7,7 +7,7 @@
             <h2>一个美观好用的 UI 框架</h2>
             <p class="actions">
                 <a href="https://github.com/yichang8421" target="_blank">GitHub</a>
-                <router-link @click="switchBtnVisible" to="/doc">开始</router-link>
+                <router-link @click="switchBtnVisible" to="/doc/intro">开始</router-link>
             </p>
         </div>
         <!--        </div>-->
@@ -66,6 +66,7 @@
 <script lang="ts">
     import {inject, Ref} from "vue";
     import Topnav from "../../components/Topnav/index.vue";
+    import background from "../../assets/img/background.png";
 
     export default {
         components: {Topnav},
@@ -74,7 +75,8 @@
             const switchBtnVisible = () => {
                 (selectBtnVisible as any).value = true;
             };
-            return {switchBtnVisible, selectBtnVisible};
+            console.log(background);
+            return {switchBtnVisible, selectBtnVisible, background};
         }
     };
 </script>
@@ -86,8 +88,7 @@
 
     .yiui-home {
         height: 100%;
-        background: url("../../img/background.png") no-repeat fixed center;
-        background-size: cover;
+        /*background: url("../../assets/img/background.png") no-repeat fixed center;*/
         -webkit-background-size: cover;
         -o-background-size: cover;
     }

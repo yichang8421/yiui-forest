@@ -1,6 +1,6 @@
 # 森林 UI
 
-* 官网预览：[森林 UI](https://xxxx)
+* 官网预览：[森林 UI](https://yichang8421.gitee.io/forest-ui/index.html)
 
 森林 UI 是一款基于 Vue 3 和 TypeScript 的小型 UI 组件库。
 
