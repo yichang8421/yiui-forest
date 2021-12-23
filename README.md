@@ -1,6 +1,6 @@
 # 森林 UI
 
-* 官网预览：[森林 UI](https://yichang8421.gitee.io/forest-ui/index.html)
+* 官网预览：[森林 UI](https://github.com/yichang8421/yiui-forest)
 
 森林 UI 是一款基于 Vue 3 和 TypeScript 的小型 UI 组件库。
 
@@ -24,11 +24,11 @@
 
 打开终端运行下列命令：
 
-```npm install forest-ui```
+```npm i yiui-forest```
 
 或者
 
-```yarn add forest-ui```
+```yarn add yiui-forest```
 
 # 开始使用
 
@@ -36,7 +36,7 @@
 
 引入 UI 组件
 
-```import {Button, Tabs, Switch, Dialog, Input, Layout} from "forest-ui";```
+```import {Button, Tabs, Switch, Dialog, Input, Layout} from "yiui-forest";```
 
 ## Vue 单文件组件
 

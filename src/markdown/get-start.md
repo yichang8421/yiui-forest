@@ -4,7 +4,7 @@
 
 引入 UI 组件
 
-```import {Button, Tabs, Switch, Dialog, Input, Layout} from "forest-ui";```
+```import {Button, Tabs, Switch, Dialog, Input, Layout} from "yiui-forest";```
 
 
 
