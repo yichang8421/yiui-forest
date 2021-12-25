@@ -82,6 +82,10 @@
 </script>
 
 <style lang="scss" scoped>
+    $font-color:#e8c5c7;
+    $text-shadow: .2rem 0rem .5rem #c35c53, -.2rem 0rem .5rem #c35c53, 0rem .2rem .5rem #c35c53, 0rem -.2rem .5rem #c35c53;
+
+
     a:hover {
         border-bottom: none;
     }
@@ -108,8 +112,8 @@
         color: #414b5b;
 
         h1, h2 {
-            color: #e8c5c7;
-            text-shadow: .2rem 0rem .5rem #c35c53, -.2rem 0rem .5rem #c35c53, 0rem .2rem .5rem #c35c53, 0rem -.2rem .5rem #c35c53;
+            color: $font-color;
+            text-shadow: $text-shadow;
         }
 
         > .actions {
@@ -151,7 +155,8 @@
 
             > li {
                 display: inline-block;
-                color: white;
+                color: $font-color;
+                text-shadow: $text-shadow;
 
                 > a {
                     width: 300px;

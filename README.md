@@ -1,6 +1,6 @@
 # 森林 UI
 
-* 官网预览：[森林 UI](https://github.com/yichang8421/yiui-forest)
+* 官网预览：[森林 UI](https://yichang8421.gitee.io/forest-ui/index.html)
 
 森林 UI 是一款基于 Vue 3 和 TypeScript 的小型 UI 组件库。
 
@@ -8,7 +8,11 @@
 
 考虑到这是我个人学习期间的作品，还未经过广泛的用户测试，因此目前不建议用于生产环境。
 
-但是这个库还是值得一看的，它涵盖了 UI 组件库应该如何组织代码的基本细节。源代码放在了 [这里](https://github.com/yichang8421/YiUI-vue3)，提交历史信息非常规范，你可以按提交顺序逐个查看；也可以直接查看每个组件的源代码和示例。
+但是这个库还是值得一看的，它涵盖了 UI 组件库应该如何组织代码的基本细节。官方文档可查看示例代码，并支持 PC 和手机浏览。
+
+深入研究 Vue3，使用了 setup、onMounted、watchEffect、ref、computed 等 Composition API
+
+源代码放在了 [这里](https://github.com/yichang8421/yiui-forest)，提交历史信息非常规范，你可以按提交顺序逐个查看；也可以直接查看每个组件的源代码和示例。
 
 ## 当前支持的组件
 
