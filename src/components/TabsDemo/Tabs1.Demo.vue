@@ -12,14 +12,13 @@
     import {ref} from "vue";
     import Tab from "../../lib/Tab/index.vue";
     import Tabs from "../../lib/Tabs/index.vue";
-    import Demo from "../Demo/index.vue";
 
 
     export default {
-        components: {Tab, Tabs, Demo},
+        components: {Tab, Tabs},
         setup() {
             const name = ref("标签1");
-            return {name, Demo};
+            return {name};
         }
     };
 </script>
