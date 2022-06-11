@@ -18,17 +18,11 @@
 
         <button style="margin-left: 30px">第 {{pageInfo.pageNo}} 页</button>
         <button>共 {{pageInfo.total}} 条</button>
-
-
-        pageNo:{{pageInfo.pageNo}}
-        totalPage:{{totalPage}}
-        start:{{startNumAndEndNum.start}}
-        end:{{startNumAndEndNum.end}}
     </div>
 </template>
 
 <script lang="ts">
-    import {reactive, computed, watch, ref, onMounted} from "vue";
+    import {reactive, computed} from "vue";
 
     export default {
         props: {
