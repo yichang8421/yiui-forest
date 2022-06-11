@@ -5,7 +5,7 @@
                 <use xlink:href="#icon-xuanxiang"></use>
             </svg>
         </span>
-        <router-link @click="switchBtnVisible" to="/">
+        <router-link @click="switchBtnVisible" to="/home">
             <svg class="logo">
                 <use xlink:href="#icon-food-pizza"></use>
             </svg>
@@ -53,21 +53,22 @@
 <style lang="scss" scoped>
     .topnav {
         display: flex;
-        padding: 16px;
-        position: fixed;
+        padding: 12px;
         width: 100vw;
-        z-index: 10;
         top: 0;
         left: 0;
         justify-content: space-between;
-        opacity: 100%;
+
+        position: fixed;
+        z-index: 100;
 
         > a {
             height: 100%;
+            display: block;
 
             > .logo {
-                width: 32px;
-                height: 32px;
+                width: 30px;
+                height: 30px;
                 max-width: 6em;
                 margin-left: 12px;
                 margin-right: auto;
@@ -99,8 +100,8 @@
                     border-bottom: none;
 
                     > svg {
-                        width: 32px;
-                        height: 32px;
+                        width: 30px;
+                        height: 30px;
                         top: 0;
                         display: block;
                         transition: 200ms linear;

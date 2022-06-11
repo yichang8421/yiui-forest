@@ -36,8 +36,8 @@
                         <svg>
                             <use xlink:href="#icon-zhongduan"></use>
                         </svg>
-                        <h3>多段适配</h3>
-                        <p>适配移动端、PC端</p>
+                        <h3>多端适配</h3>
+                        <p>适配移动端、PC端，使用较为方便</p>
                     </a>
                 </li>
                 <li>
@@ -55,7 +55,7 @@
                             <use xlink:href="#icon-food-cookie"></use>
                         </svg>
                         <h3>代码易读</h3>
-                        <p>每个组件的源代码都极其简洁</p>
+                        <p>组件的源代码十分简洁</p>
                     </a>
                 </li>
             </ul>
@@ -82,7 +82,7 @@
 </script>
 
 <style lang="scss" scoped>
-    $font-color:#e8c5c7;
+    $font-color: #e8c5c7;
     $text-shadow: .2rem 0rem .5rem #c35c53, -.2rem 0rem .5rem #c35c53, 0rem .2rem .5rem #c35c53, 0rem -.2rem .5rem #c35c53;
 
 

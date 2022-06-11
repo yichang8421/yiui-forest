@@ -35,6 +35,45 @@
                     <li>
                         <router-link to="/doc/layout">Layout 组件</router-link>
                     </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/doc/pagination">Pagination 组件</router-link>
+                    </li>
                 </ol>
             </aside>
             <main>
@@ -91,14 +130,7 @@
     $ahover-color: #f0a732;
 
     .layout {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        overflow-x: hidden;
-
         .nav {
-            flex-shrink: 0;
             background: linear-gradient(
                             90deg,
                             #a58ca6 0%,
@@ -107,30 +139,21 @@
         }
 
         > .content {
-            /*background: gold;*/
-            display: flex;
-            flex: 1;
-            padding-top: 70px;
-            padding-left: 150px;
-            width: 100vw;
-            @media (max-width: 500px) {
-                padding-left: 0;
-            }
-            background: #c35c53;
+            display: grid;      // 用于给main定位
+            grid:60px auto / 210px auto;
 
             > aside {
-                flex-shrink: 0;
-                z-index: 2;
-
                 background: $aside-background;
-                width: 150px;
                 height: 100vh;
                 padding: 16px 0;
+                overscroll-behavior: contain;
 
                 position: fixed;
-                top: 0;
-                left: 0;
-                padding-top: 120px;
+                top: 0;     // fixed添加滚动条时必须设置
+                bottom:0;   // fixed添加滚动条时必须设置
+                padding-top: 80px;
+
+                overflow-y:scroll;
 
                 > h2 {
                     margin-bottom: 4px;
@@ -159,22 +182,22 @@
             }
 
             > main {
-                flex: 1;
+                grid-row: 2;
+                grid-column: 2;
                 padding: 16px 32px;
-                background: white;
-                overflow: auto;
-                /*scrollbar-width: none;*/
-                /*-ms-overflow-style: none;*/
+            }
+        }
 
-                /*&:hover ::-webkit-scrollbar-thumb {*/
-                /*    background: rgba(0, 0, 0, 0.1);*/
-                /*    border: 1px solid red;*/
-                /*}*/
+        @media (max-width: 500px) {
+            > .content {
+                display: grid;
+                grid:60px / 1fr;
 
-                /*::-webkit-scrollbar {*/
-                /*    width: 12px;*/
-                /*}*/
-
+                > main {
+                    grid-row: 2;
+                    grid-column: 1 / 3;
+                    padding: 16px 32px;
+                }
             }
         }
     }

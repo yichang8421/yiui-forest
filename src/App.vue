@@ -4,7 +4,7 @@
 
 <script>
     import {ref, provide} from "vue";
-    import {router} from "./router";
+    import {router} from "./routers/router";
 
     export default {
         name: 'App',

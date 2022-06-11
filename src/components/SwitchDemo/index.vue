@@ -5,7 +5,7 @@
         <Demo :component="SwitchDemo1"/>
         <Demo :component="SwitchDemo2"/>
         <Attributes :data="data"/>
-        <Pagejump :lastPage="{ route: '/doc/tabs', content: 'Tab' }"
+        <Pagejump :lastPage="{ route: '/doc/tabs', content: 'Tab 组件' }"
                   :nextPage="{ route: '/doc/layout', content: 'Layout 组件' }"/>
     </div>
 </template>

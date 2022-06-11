@@ -51,7 +51,7 @@
   <div><Button>按钮</Button></div>
 </template>
 <script>
-  import {Button, Tabs, Switch, Dialog, Input, Layout} from "forest-ui";
+  import {Button, Tabs, Switch, Dialog, Input, Layout} from "yiui-forest";
   export default {
     components: {Button}
   }

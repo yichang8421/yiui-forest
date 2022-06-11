@@ -26,20 +26,21 @@
         <Demo :component="LayoutDemo3"/>
         <Demo :component="LayoutDemo4"/>
         <Attributes :data="data"/>
-        <Pagejump :last-page="{ route: '/doc/switch', content: 'Switch 组件' }"/>
+        <Pagejump :lastPage="{ route: '/doc/switch', content: 'Switch 组件' }"
+                  :nextPage="{ route: '/doc/pagination', content: 'Pagination 组件' }"/>
     </div>
 </template>
 
 <script lang="ts">
     import "prismjs";
     import "prismjs/themes/prism.css";
-    import LayoutDemo1 from "../../components/LayoutDemo/Layout1.demo.vue";
-    import LayoutDemo2 from "../../components/LayoutDemo/Layout2.demo.vue";
-    import LayoutDemo3 from "../../components/LayoutDemo/Layout3.demo.vue";
-    import LayoutDemo4 from "../../components/LayoutDemo/Layout4.demo.vue";
-    import Demo from "../../components/Demo/index.vue";
-    import Attributes from "../../components/Attributes/index.vue";
-    import Pagejump from "../../components/Pagejump/index.vue";
+    import LayoutDemo1 from "/src/components/LayoutDemo/Layout1.demo.vue";
+    import LayoutDemo2 from "/src/components/LayoutDemo/Layout2.demo.vue";
+    import LayoutDemo3 from "/src/components/LayoutDemo/Layout3.demo.vue";
+    import LayoutDemo4 from "/src/components/LayoutDemo/Layout4.demo.vue";
+    import Demo from "/src/components/Demo/index.vue";
+    import Attributes from "/src/components/Attributes/index.vue";
+    import Pagejump from "/src/components/Pagejump/index.vue";
 
     const Prism = (window as any).Prism;
 
