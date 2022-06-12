@@ -3,7 +3,7 @@ import "github-markdown-css";
 import "./lib/yiui.scss";
 import "./index.scss";
 import App from "./App.vue";
-import {router} from "./routers/router";
+import {router} from "./router";
 
 const app = createApp(App);
 app.use(router);

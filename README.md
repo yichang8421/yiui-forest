@@ -22,7 +22,8 @@
 - [x] Tabs 标签切换
 - [x] Switch 开关
 - [x] Layout 布局
-- [ ] ...
+- [x] Pagination 布局
+- [x] ...
 
 # 安装
 
